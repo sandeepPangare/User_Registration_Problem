@@ -14,7 +14,7 @@ public class UserRegistration {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(name);
-        boolean r = m.matches();
+        boolean r = m.matches(); //compare and store result
 
         if (r)
             System.out.println("First name is valid");

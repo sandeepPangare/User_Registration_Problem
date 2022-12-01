@@ -8,7 +8,7 @@ public class UserRegistrationMain {
         System.out.println("Welcome to User Registration System Problem");
     }
     public static void main(String[] args) {
-        welcome();
+        welcome(); //calling static method
         UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter 1 : to validate First Name ");
