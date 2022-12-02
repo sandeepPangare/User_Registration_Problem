@@ -11,7 +11,7 @@ public class UserRegistrationMain {
         welcome(); //calling static method
         UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:\nEnter 3: validate email: \nEnter 4 : to validate Mobile Number: \nEnter 5: validate passwordRule1: \n6. Validate Password Rule2 : \n7. Validate Password Rule3 : \n8. Validate Password Rule4 : ");
+        System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:\nEnter 3: validate email: \nEnter 4 : to validate Mobile Number: \nEnter 5: validate passwordRule1: \n6. Validate Password Rule2 : \n7. Validate Password Rule3 : \n8. Validate Password Rule4 : \n9. Validate Email Sample: ");
         switch (scanner.nextInt()){
             case 1:
                 UserRegistration.validFirstName();
@@ -36,6 +36,9 @@ public class UserRegistrationMain {
                 break;
             case 8:
                 UserRegistration.validPasswordRule4();
+                break;
+            case 9:
+                UserRegistration.validEmailSamples();
                 break;
         }
     }

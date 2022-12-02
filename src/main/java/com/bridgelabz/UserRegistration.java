@@ -132,4 +132,21 @@ public class UserRegistration {
         else
             System.out.println("Password is Invalid");
     }
+    public static void validEmailSamples() {
+        System.out.print("Enter Email Sample : ");
+        /*
+        1. abc@yahoo.com,2. abc-100@yahoo.com,3. abc.100@yahoo.com 2. abc111@abc.com,4. abc-100@abc.net,
+        5. abc.100@abc.com.au6. abc@1.com,7. abc@gmail.com.com8. abc+100@gmail.com
+         */
+        String emailSample = scanner.nextLine();
+        String regex = "^(?!.*@.*@)[a-z+_-]+(.[a-z0-9])*@[a-z0-9]+(.[a-z])*.[a-z]{2,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(emailSample);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Email sample is valid");
+        else
+            System.out.println("Email sample is invalid");
+    }
 }
