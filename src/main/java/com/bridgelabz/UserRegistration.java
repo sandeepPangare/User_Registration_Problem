@@ -12,28 +12,45 @@ public class UserRegistration {
         System.out.print("Enter the First Name : ");
         String name = scanner.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(name);
-        boolean r = m.matches(); //compare and store result
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(name);
+        boolean result = matcher.matches(); //compare and store result
 
-        if (r)
+        if (result)
             System.out.println("First name is valid");
         else
             System.out.println("First name is !Invalid");
-        return r;
+        return result;
     }
     public static boolean validLastName() {
         System.out.print("Enter the First Name : ");
         String name = scanner.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(name);
-        boolean r = m.matches(); //compare and store result
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(name);
+        boolean result = matcher.matches(); //compare and store result
 
-        if (r)
-            System.out.println("First name is valid");
+        if (result)
+            System.out.println("Last name is valid");
         else
-            System.out.println("First name is !Invalid");
-        return r;
+            System.out.println("Last name is !Invalid");
+        return result;
+    }
+    public static boolean validEmail() {
+
+        System.out.println("Enter EMail: ");
+        String EMail = scanner.next();
+        String regex = "^[a-zA-Z0-9.]+[@][a-zA-Z]{3,}[.][a-zA-Z]{2,5}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(EMail);
+        boolean result = matcher.matches();
+        System.out.println(result);
+
+        if (result)
+            System.out.println("Email is Valid");
+        else
+            System.out.println("Email is Invalid");
+
+        return result;
     }
 }

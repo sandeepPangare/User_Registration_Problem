@@ -11,14 +11,16 @@ public class UserRegistrationMain {
         welcome(); //calling static method
         UserRegistration user = new UserRegistration();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter 1 : to validate First Name ");
-        System.out.println("Enter 2 : to validate Last Name ");
+        System.out.println("Enter 1: To validate First Name:\nEnter 2: To validate Last Name:\nEnter 3: validate email: ");
         switch (scanner.nextInt()){
             case 1:
                 UserRegistration.validFirstName();
                 break;
             case 2:
                 UserRegistration.validLastName();
+                break;
+            case 3:
+                UserRegistration.validEmail();
                 break;
         }
     }
