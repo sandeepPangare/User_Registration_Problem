@@ -86,6 +86,9 @@ public class UserRegistration {
     }
     public static void validPasswordRule2() {
         System.out.print("Enter Password Rule2 : ");
+        /*
+        Should have at least 1 Upper Case
+         */
         String passwordRule2 = scanner.nextLine();
         String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
@@ -95,6 +98,22 @@ public class UserRegistration {
         if (result)
             System.out.println("Password Rule2 is valid");
         else
-            System.out.println("Password must have atleast one uppercase letter");
+            System.out.println("Password is Invalid");
+    }
+    public static void validPasswordRule3() {
+        System.out.print("Enter Password Rule3 : ");
+        /*
+        Should have at least 1 numeric number in the password
+         */
+        String passwordRule3 = scanner.nextLine();
+        String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule3);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Password Rule3 is valid");
+        else
+            System.out.println("Password is Invalid");
     }
 }
