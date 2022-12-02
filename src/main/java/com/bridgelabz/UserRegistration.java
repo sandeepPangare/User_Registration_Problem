@@ -53,4 +53,17 @@ public class UserRegistration {
 
         return result;
     }
+    public static void validMobileNumber() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your mobile number : ");
+        String phoneNo = scanner.nextLine();
+        String regex3 = "^[0-9]{2}\\s{0,1}[0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex3);
+        Matcher matcher = pattern.matcher(phoneNo);
+        boolean result = matcher.matches();
+        if (result)
+            System.out.println("Phone number is Valid");
+        else
+            System.out.println("Phone number is Invalid");
+    }
 }
