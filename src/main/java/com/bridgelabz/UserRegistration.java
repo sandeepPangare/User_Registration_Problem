@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static boolean validFirstName(String name) throws  InvalidFirstNameException {
+    public static boolean validFirstName(String name) throws  Invalid_InputDetailsException {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
@@ -15,7 +15,7 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidFirstNameException("first Name should start with a Cap and should have minimum 3 characters");
+            throw new Invalid_InputDetailsException("first Name should start with a Cap and should have minimum 3 characters");
         }
         else {
             return true;
@@ -23,7 +23,7 @@ public class UserRegistration {
 
     }
 
-    public static boolean validLastName(String name) throws InvalidLastNameException {
+    public static boolean validLastName(String name) throws Invalid_InputDetailsException {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
@@ -31,14 +31,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidLastNameException("Last Name should start with a Cap and should have minimum 3 chars");
+            throw new Invalid_InputDetailsException("Last Name should start with a Cap and should have minimum 3 chars");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validEmail(String email) throws InvalidEmailException {
+    public static boolean validEmail(String email) throws Invalid_InputDetailsException {
 
         String regex = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern = Pattern.compile(regex);
@@ -47,14 +47,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidEmailException("Enter a valid email address");
+            throw new Invalid_InputDetailsException("Enter a valid email address");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validMobileNumber(String mobileNo) throws InvalidMobileNumberException {
+    public static boolean validMobileNumber(String mobileNo) throws Invalid_InputDetailsException {
         String regex = "^[\\d]{2}\\s[\\d]{10}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(mobileNo);
@@ -62,14 +62,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidMobileNumberException("Enter the Valid Mobile number with county code");
+            throw new Invalid_InputDetailsException("Enter the Valid Mobile number with county code");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validPasswordRule1(String passwordRule1) throws InvalidPasswordRule1Exception {
+    public static boolean validPasswordRule1(String passwordRule1) throws Invalid_InputDetailsException {
         String regex = "^[A-Za-z0-9@._-]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule1);
@@ -77,14 +77,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidPasswordRule1Exception("Password must have 8 character");
+            throw new Invalid_InputDetailsException("Password must have 8 character");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validPasswordRule2(String passwordRule2) throws InvalidPasswordRule2Exception {
+    public static boolean validPasswordRule2(String passwordRule2) throws Invalid_InputDetailsException {
         String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule2);
@@ -92,14 +92,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidPasswordRule2Exception("Password must have atleast one uppercase letter");
+            throw new Invalid_InputDetailsException("Password must have atleast one uppercase letter");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validPasswordRule3(String passwordRule3) throws InvalidPasswordRule3Exception {
+    public static boolean validPasswordRule3(String passwordRule3) throws Invalid_InputDetailsException {
         String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule3);
@@ -107,14 +107,14 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidPasswordRule3Exception("Password must have atleast one numeric number");
+            throw new Invalid_InputDetailsException("Password must have atleast one numeric number");
         }
         else {
             return true;
         }
     }
 
-    public static boolean validPasswordRule4(String passwordRule4) throws InvalidPasswordRule4Exception {
+    public static boolean validPasswordRule4(String passwordRule4) throws Invalid_InputDetailsException {
         String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule4);
@@ -122,7 +122,7 @@ public class UserRegistration {
         System.out.println(result);
 
         if (!result) {
-            throw new InvalidPasswordRule4Exception("Password must has exactly one special character");
+            throw new Invalid_InputDetailsException("Password must has exactly one special character");
         }
         else {
             return true;

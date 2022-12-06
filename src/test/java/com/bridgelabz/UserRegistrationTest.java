@@ -11,7 +11,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validFirstName("Sandeep"));
             System.out.println("First name is valid");
-        }catch (InvalidFirstNameException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid First Name because :- " + e);
         }
     }
@@ -21,7 +21,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validFirstName("sandeep"));
             System.out.println("First name is valid");
-        }catch (InvalidFirstNameException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid First Name because :- " + e);
         }
     }
@@ -31,7 +31,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validLastName("Pangare"));
             System.out.println("Last name is valid");
-        }catch (InvalidLastNameException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Last Name because :- " + e);
         }
     }
@@ -41,7 +41,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validLastName("pangare"));
             System.out.println("Last name is valid");
-        }catch (InvalidLastNameException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Last Name because :- " + e);
         }
     }
@@ -51,7 +51,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validEmail("abc.xyz@bl.co.in"));
             System.out.println("Email is valid");
-        }catch (InvalidEmailException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Email because :- " + e);
         }
     }
@@ -63,7 +63,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validEmail("abc@bl.in@.in"));
             System.out.println("Email is valid");
-        }catch (InvalidEmailException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Email because :- " + e);
         }
     }
@@ -73,7 +73,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validMobileNumber("91 9919819801"));
             System.out.println("Mobile Number is valid");
-        }catch (InvalidMobileNumberException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Mobile Number because :- " + e);
         }
     }
@@ -83,7 +83,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validMobileNumber("919919819801"));
             System.out.println("Mobile Number is valid");
-        }catch (InvalidMobileNumberException e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Mobile Number because :- " + e);
         }
     }
@@ -93,7 +93,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule1("Sandy005"));
             System.out.println("Password Rule1 is valid");
-        }catch (InvalidPasswordRule1Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule1 because :- " + e);
         }
     }
@@ -103,7 +103,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule1("Sandy05"));
             System.out.println("Password Rule1 is valid");
-        }catch (InvalidPasswordRule1Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule1 because :- " + e);
         }
     }
@@ -113,7 +113,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule2("Sandy.05"));
             System.out.println("Password Rule2 is valid");
-        }catch (InvalidPasswordRule2Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule2 because :- " + e);
         }
     }
@@ -123,7 +123,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule2("sandy.05"));
             System.out.println("Password Rule2 is valid");
-        }catch (InvalidPasswordRule2Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule2 because :- " + e);
         }
     }
@@ -133,7 +133,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule3("Sandy@105"));
             System.out.println("Password Rule3 is valid");
-        }catch (InvalidPasswordRule3Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule3 because :- " + e);
         }
     }
@@ -143,7 +143,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule3("Sandy@#$%"));
             System.out.println("Password Rule3 is valid");
-        }catch (InvalidPasswordRule3Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule3 because :- " + e);
         }
     }
@@ -153,7 +153,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule4("Sandy@55vire"));
             System.out.println("Password Rule4 is valid");
-        }catch (InvalidPasswordRule4Exception e) {
+        }catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule4 because :- " + e);
         }
     }
@@ -163,7 +163,7 @@ public class UserRegistrationTest {
         try {
             Assertions.assertTrue(userRegistration.validPasswordRule4("Sandy555"));
             System.out.println("Password Rule4 is valid");
-        } catch (InvalidPasswordRule4Exception e) {
+        } catch (Invalid_InputDetailsException e) {
             System.out.println("Invalid Password Rule4 because :- " + e);
         }
     }
