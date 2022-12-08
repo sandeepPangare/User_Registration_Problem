@@ -4,12 +4,17 @@ package com.bridgelabz;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@FunctionalInterface
+interface Validation{
+    boolean validate(String v) throws  Invalid_InputDetailsException;
+}
+
 public class UserRegistration extends Throwable {
 
-    public static boolean validFirstName(String name) throws  Invalid_InputDetailsException {
+    static Validation validateFirstName = firstName ->  {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(firstName);
         boolean result = matcher.matches();
         System.out.println(result);
 
@@ -20,12 +25,12 @@ public class UserRegistration extends Throwable {
             return true;
         }
 
-    }
+    };
 
-    public static boolean validLastName(String name) throws Invalid_InputDetailsException {
+    static Validation validateLastName = lastName ->  {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(name);
+        Matcher matcher = pattern.matcher(lastName);
         boolean result = matcher.matches();
         System.out.println(result);
 
@@ -35,9 +40,9 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validEmail(String email) throws Invalid_InputDetailsException {
+    static Validation validateEmail = email -> {
 
         String regex = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern = Pattern.compile(regex);
@@ -51,12 +56,12 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validMobileNumber(String mobileNo) throws Invalid_InputDetailsException {
+    static Validation validatePhoneNumber = phonenumber -> {
         String regex = "^[\\d]{2}\\s[\\d]{10}$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(mobileNo);
+        Matcher matcher = pattern.matcher(phonenumber);
         boolean result = matcher.matches();
         System.out.println(result);
 
@@ -66,9 +71,9 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validPasswordRule1(String passwordRule1) throws Invalid_InputDetailsException {
+    static Validation validatePasswordRule1 = passwordRule1 -> {
         String regex = "^[A-Za-z0-9@._-]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule1);
@@ -81,9 +86,9 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validPasswordRule2(String passwordRule2) throws Invalid_InputDetailsException {
+    static Validation validatePasswordRule2 = passwordRule2 -> {
         String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule2);
@@ -96,9 +101,9 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validPasswordRule3(String passwordRule3) throws Invalid_InputDetailsException {
+    static Validation validatePasswordRule3 = passwordRule3 -> {
         String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule3);
@@ -111,9 +116,9 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 
-    public static boolean validPasswordRule4(String passwordRule4) throws Invalid_InputDetailsException {
+    static Validation validatePasswordRule4 = passwordRule4 -> {
         String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule4);
@@ -126,5 +131,5 @@ public class UserRegistration extends Throwable {
         else {
             return true;
         }
-    }
+    };
 }
