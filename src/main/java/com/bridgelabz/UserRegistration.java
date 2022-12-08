@@ -1,11 +1,10 @@
 package com.bridgelabz;
 
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UserRegistration {
+public class UserRegistration extends Throwable {
 
     public static boolean validFirstName(String name) throws  Invalid_InputDetailsException {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
